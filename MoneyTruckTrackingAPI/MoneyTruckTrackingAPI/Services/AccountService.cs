@@ -61,7 +61,7 @@ namespace MoneyTruckTrackingAPI.Services
                 return null;
             }
             var bytes = Encoding.UTF8.GetBytes(request.PasswordSalt);
-            string salt = Convert.ToBase64String(bytes).ToString();
+            string salt = Convert.ToBase64String(bytes);
 
             var newAccount = new Account
             {

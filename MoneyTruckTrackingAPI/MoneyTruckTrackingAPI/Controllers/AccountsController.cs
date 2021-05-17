@@ -1,11 +1,14 @@
-﻿using Microsoft.AspNetCore.Cors;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using MoneyTruckTrackingAPI.Requests;
+using MoneyTruckTrackingAPI.Responses;
 using MoneyTruckTrackingAPI.ServiceInterfaces;
 using MoneyTruckTrackingAPI.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace MoneyTruckTrackingAPI.Controllers
@@ -35,7 +38,7 @@ namespace MoneyTruckTrackingAPI.Controllers
             var res = await _accService.Login(req);
             if(res == null)
             {
-                return BadRequest($"{req.Username} login unsuccessfully");
+                return BadRequest($"{req.Username} login un-successfully");
             }
 
             return Ok(res);
@@ -43,12 +46,21 @@ namespace MoneyTruckTrackingAPI.Controllers
 
         // POST /api/accounts/signup
         [HttpPost()]
-        [Route("signup")]
+        //[Authorize(Policy = "OnlyAdmin")]
+        [Route("signup")]        
         public async Task<IActionResult> Signup(SignupRequest req)
         {
+            var claimsIdentity = HttpContext.User.Identity as ClaimsIdentity;
+            var claim = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier);
+
+            if (claim == null)
+            {
+                return Unauthorized("YOU CANNOT USE THIS API BECAUSE YOU'RE NOT ADMIN");
+            }
+
             if (CheckNull(req))
             {
-                return BadRequest("Can't create new Account");
+                return BadRequest("Can't create a new Account");
             }
 
             if (string.IsNullOrEmpty(req.Admin))

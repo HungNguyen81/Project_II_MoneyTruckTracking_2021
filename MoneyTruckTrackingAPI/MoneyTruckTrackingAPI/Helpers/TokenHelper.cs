@@ -9,8 +9,8 @@ namespace MoneyTruckTrackingAPI.Helpers
 {
     public class TokenHelper
     {
-        public const string ISSUER = "Nguyen Ngoc Hung";
-        public const string AUDIENCE = "Nguyen Hung";
+        public const string ISSUER = "hungnguyenngoc";
+        public const string AUDIENCE = "hungnguyenngoc";
         // SECRET is a base64-encoded string
         public const string SECRET = "OFRC1j9aaR2BvADxNWlG2pmuD392UfQBZZLM1fuzDEzDlEpSsn+btrpJKd3FfY855OMA9oK4Mc8y48eYUrVUSw==";
 

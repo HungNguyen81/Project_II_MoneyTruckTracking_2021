@@ -38,9 +38,15 @@ namespace MoneyTruckTrackingAPI
                     )
                 );
 
-            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+            services.AddAuthentication(x =>
+            {
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
                 .AddJwtBearer(op =>
                 {
+                    op.RequireHttpsMetadata = true;
+                    op.SaveToken = true;
                     op.TokenValidationParameters = new TokenValidationParameters
                     {
                         ValidateIssuer = true,
@@ -79,7 +85,7 @@ namespace MoneyTruckTrackingAPI
 
             app.UseRouting();
 
-            app.UseAuthorization();
+            app.UseAuthentication();
             app.UseAuthorization();
 
             //app.UseCors();

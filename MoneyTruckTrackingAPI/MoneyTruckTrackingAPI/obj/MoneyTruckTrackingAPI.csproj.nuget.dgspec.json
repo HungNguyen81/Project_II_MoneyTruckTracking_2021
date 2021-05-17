@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\nguye\\source\\repos\\MoneyTruckTrackingAPI\\MoneyTruckTrackingAPI\\MoneyTruckTrackingAPI.csproj": {}
+    "D:\\0. Subjects\\20202\\4. Project 2\\Project_II_MoneyTruckTracking_2021\\MoneyTruckTrackingAPI\\MoneyTruckTrackingAPI\\MoneyTruckTrackingAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\nguye\\source\\repos\\MoneyTruckTrackingAPI\\MoneyTruckTrackingAPI\\MoneyTruckTrackingAPI.csproj": {
+    "D:\\0. Subjects\\20202\\4. Project 2\\Project_II_MoneyTruckTracking_2021\\MoneyTruckTrackingAPI\\MoneyTruckTrackingAPI\\MoneyTruckTrackingAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nguye\\source\\repos\\MoneyTruckTrackingAPI\\MoneyTruckTrackingAPI\\MoneyTruckTrackingAPI.csproj",
+        "projectUniqueName": "D:\\0. Subjects\\20202\\4. Project 2\\Project_II_MoneyTruckTracking_2021\\MoneyTruckTrackingAPI\\MoneyTruckTrackingAPI\\MoneyTruckTrackingAPI.csproj",
         "projectName": "MoneyTruckTrackingAPI",
-        "projectPath": "C:\\Users\\nguye\\source\\repos\\MoneyTruckTrackingAPI\\MoneyTruckTrackingAPI\\MoneyTruckTrackingAPI.csproj",
+        "projectPath": "D:\\0. Subjects\\20202\\4. Project 2\\Project_II_MoneyTruckTracking_2021\\MoneyTruckTrackingAPI\\MoneyTruckTrackingAPI\\MoneyTruckTrackingAPI.csproj",
         "packagesPath": "C:\\Users\\nguye\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nguye\\source\\repos\\MoneyTruckTrackingAPI\\MoneyTruckTrackingAPI\\obj\\",
+        "outputPath": "D:\\0. Subjects\\20202\\4. Project 2\\Project_II_MoneyTruckTracking_2021\\MoneyTruckTrackingAPI\\MoneyTruckTrackingAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -11,22 +11,19 @@
             "truck_id": "36B8-23082",
             "lat": 21.005119917797476, 
             "lng": 105.84385323229442,
-            "content": "Truck 1",
-            "type": "normal"
+            "content": "Truck 1"
         },
         {
             "truck_id": "37B5-23456",
             "lat": 21.006086447814276, 
             "lng": 105.84462570847639,
-            "content": "Truck 2",
-            "type": "normal"
+            "content": "Truck 2"
         },
         {
             "truck_id": "30A5-12345",
             "lat": 21.005149965457047, 
             "lng": 105.84460425080465,
-            "content": "Truck 3",
-            "type": "special"
+            "content": "Truck 3"
         }
     ]
 }

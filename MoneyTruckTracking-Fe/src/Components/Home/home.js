@@ -1,18 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import * as truckData from "../../data/trucks.json";
+import './home-style.css';
 // import {useHistory} from 'react-router-dom';
 import {
     withGoogleMap,
     withScriptjs,
     GoogleMap,
     Marker,
-    InfoWindow
+    InfoWindow,
+    Polyline
 } from 'react-google-maps';
 
 
 function Map() {
     const [selectedTruck, setselectedTruck] = useState(null);
-
+    var pathCoordinates = [
+        { lat: 21.005119917797476, lng: 105.84385323229442 },
+        { lat: 21.005149965457047, lng: 105.84460425080465 },
+        { lat: 21.006086447814276, lng: 105.84462570847639 }        
+    ]
     useEffect(() => {
         const listener = e => {
             if (e.key === "Escape") {
@@ -46,13 +52,23 @@ function Map() {
                     }}
                     icon={{
                         url: `/truck.png`,
-                        scaledSize: new window.google.maps.Size(25, 25)
+                        scaledSize: new window.google.maps.Size(50, 50)
                     }}
                 />
             ))}
+            
+            <Polyline
+                path={pathCoordinates}
+                geodesic={true}
+                options={{
+                    strokeColor: "#ff0000",
+                    strokeOpacity: 0.3,
+                    strokeWeight: 5,                    
+                }}
+            />
 
             {selectedTruck && (
-                <InfoWindow
+                <InfoWindow                
                     onCloseClick={() => {
                         setselectedTruck(null);
                     }}
@@ -63,7 +79,9 @@ function Map() {
                 >
                     <div>
                         <h2>{selectedTruck.content}</h2>
-                        <p>{selectedTruck.truck_id}</p>
+                        <strong>{selectedTruck.truck_id}</strong>
+                        <br/>
+                        <p>{selectedTruck.lat}, {selectedTruck.lng}</p>
                     </div>
                 </InfoWindow>
             )}
